@@ -4,12 +4,12 @@ library(tidyverse)
 library(viridis)
 
 # Import datasets
-crimeData <- read.csv("C:\\Users\\tyler\\OneDrive - University of Virginia\\Semesters\\FALL 2021\\STS 2500\\Crime_Data_from_2010_to_2019.csv")
-povertyData <- read.csv("C:\\Users\\tyler\\OneDrive - University of Virginia\\Semesters\\FALL 2021\\STS 2500\\Living_Wage__2017_.csv")
+crimeData <- read.csv(".\\Datasets\\Crime_Data_from_2010_to_2019.csv")
+povertyData <- read.csv(".\\Datasets\\Living_Wage__2017_.csv")
 
 ### Cleaning Datasets ###
 
-# Removing MISC Crime beacuase MISC is undefined
+# Removing MISC Crime because MISC is undefined
 crimeData <- crimeData %>% filter(Crm.Cd != 946)
 
 # Cleaning rows with random numbers

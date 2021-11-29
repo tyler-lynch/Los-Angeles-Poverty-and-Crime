@@ -4,8 +4,8 @@ library(scales)
 
 ### DATA CLEANING ###
 
-budgetData <- read.csv("C:\\Users\\tyler\\OneDrive - University of Virginia\\Semesters\\FALL 2021\\STS 2500\\City_Budget_and_Expenditures.csv")
-crimeData <- read.csv("C:\\Users\\tyler\\OneDrive - University of Virginia\\Semesters\\FALL 2021\\STS 2500\\Crime_Data_from_2010_to_2019.csv")
+budgetData <- read.csv(".\\Datasets\\City_Budget_and_Expenditures.csv")
+crimeData <- read.csv(".\\Datasets\\Crime_Data_from_2010_to_2019.csv")
 
 listOfDepartments <- levels(factor(budgetData$DEPARTMENT.NAME))
 
@@ -31,7 +31,6 @@ crimeDataSummarized <- crimeData %>%
 model.data <- budgetDataGrouped%>%inner_join(crimeDataSummarized, by="BUDGET.FISCAL.YEAR")
 
 # Manually fixed data in excel. Made each department a column with its budget as the values and combined with poverty data from 2012-2019.
-# Should be fixed in google drive, so just read in the BudgetData.csv
 write.csv(model.data, "C:\\Users\\tyler\\OneDrive - University of Virginia\\Semesters\\FALL 2021\\STS 2500\\BudgetData.csv")
 model.data <- read.csv("C:\\Users\\tyler\\OneDrive - University of Virginia\\Semesters\\FALL 2021\\STS 2500\\BudgetData.csv")
 
