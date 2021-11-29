@@ -31,6 +31,7 @@ crimeDataSummarized <- crimeData %>%
 model.data <- budgetDataGrouped%>%inner_join(crimeDataSummarized, by="BUDGET.FISCAL.YEAR")
 
 # Manually fixed data in excel. Made each department a column with its budget as the values and combined with poverty data from 2012-2019.
+# Should be fixed in google drive, so just read in the BudgetData.csv
 write.csv(model.data, "C:\\Users\\tyler\\OneDrive - University of Virginia\\Semesters\\FALL 2021\\STS 2500\\BudgetData.csv")
 model.data <- read.csv("C:\\Users\\tyler\\OneDrive - University of Virginia\\Semesters\\FALL 2021\\STS 2500\\BudgetData.csv")
 
